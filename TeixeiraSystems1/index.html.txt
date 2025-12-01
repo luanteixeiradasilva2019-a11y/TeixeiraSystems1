@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teixeira Systems</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="brand" style="text-align:center; margin-bottom:10px;">
+        <h1>TEIXEIRA SYSTEMS</h1>
+        <h2 id="page-title" style="margin:0; font-size:16px; font-weight:500; color:#555;">
+            Dashboard
+        </h2>
+        <hr style="width:60%; border:0; border-top:2px solid #3b82f6; margin:auto;">
+    </div>
+
+    <nav>
+        <button id="btn-dashboard">Dashboard</button>
+        <button id="btn-registrar">Registrar</button>
+        <button id="btn-detalhes">Detalhes</button>
+    </nav>
+</header>
+
+<main id="main-content">
+    <div class="cards">
+        <div class="card"><h3>Abertos</h3><strong>12</strong></div>
+        <div class="card"><h3>Em andamento</h3><strong>7</strong></div>
+        <div class="card"><h3>Resolvidos</h3><strong>20</strong></div>
+    </div>
+
+    <h2>Lista de Incidentes</h2>
+
+    <div class="list-item">
+        <strong>Falha no SSO</strong>
+        <p>Usuários não conseguem logar.</p>
+    </div>
+
+    <div class="list-item" style="border-left-color:#f59e0b;">
+        <strong>Erro no relatório</strong>
+        <p>Relatório X gera exceção.</p>
+    </div>
+
+    <div class="list-item" style="border-left-color:#22c55e;">
+        <strong>Backup falhou</strong>
+        <p>Backup do banco não foi concluído.</p>
+    </div>
+</main>
+
+<script src="app.js"></script>
+
+</body>
+</html>

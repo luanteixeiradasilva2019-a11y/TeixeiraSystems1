@@ -1,0 +1,64 @@
+/* ============================================================
+    SISTEMA DE MÚLTIPAS PÁGINAS (SPA)
+    ============================================================ */
+
+// Pegar botões do menu
+const btnDashboard = document.getElementById("btn-dashboard");
+const btnRegistrar = document.getElementById("btn-registrar");
+const btnDetalhes  = document.getElementById("btn-detalhes");
+const pageTitle    = document.getElementById("page-title");
+const main         = document.getElementById("main-content");
+
+/* ====== TEMPLATES DE CADA PÁGINA ====== */
+
+const paginaDashboard = `
+    <div class="cards">
+        <div class="card"><h3>Abertos</h3><strong>12</strong></div>
+        <div class="card"><h3>Em andamento</h3><strong>7</strong></div>
+        <div class="card"><h3>Resolvidos</h3><strong>20</strong></div>
+    </div>
+
+    <h2>Lista de Incidentes</h2>
+
+    <div class="list-item"><strong>Falha no SSO</strong><p>Usuários não conseguem logar.</p></div>
+    <div class="list-item" style="border-left-color:#f59e0b;"><strong>Erro no relatório</strong><p>Relatório X gera exceção.</p></div>
+    <div class="list-item" style="border-left-color:#22c55e;"><strong>Backup falhou</strong><p>Backup do banco não foi concluído.</p></div>
+`;
+
+const paginaRegistrar = `
+    <h2>Registrar Incidente</h2>
+    <div style="background:#fff;padding:20px;border-radius:10px;border:1px solid #ddd;max-width:400px;">
+        <label>Título:<br>
+        <input id="reg-titulo" style='width:100%;padding:6px;border-radius:6px;border:1px solid #aaa;'></label><br><br>
+
+        <label>Descrição:<br>
+        <textarea id="reg-descricao" style='width:100%;padding:6px;border-radius:6px;border:1px solid #aaa;' rows='4'></textarea></label><br><br>
+
+        <button id="reg-salvar" style='padding:8px 14px;border-radius:6px;border:0;background:#3b82f6;color:#fff;'>Salvar</button>
+    </div>
+`;
+
+const paginaDetalhes = `
+    <h2>Detalhes do Incidente</h2>
+    <div style='background:#fff;padding:20px;border-radius:10px;border:1px solid #ddd;'>
+        <strong>Título:</strong> Falha no SSO<br>
+        <strong>Status:</strong> Em andamento<br>
+        <strong>Descrição:</strong> Usuários não conseguem logar.<br><br>
+        <button id="detalhe-resolver" style='padding:8px 14px;border-radius:6px;border:0;background:#3b82f6;color:#fff;'>Marcar como resolvido</button>
+    </div>
+`;
+
+/* ===== FUNÇÃO QUE TROCA A PÁGINA ===== */
+function carregarPagina(conteudo, titulo) {
+    main.innerHTML = conteudo;
+    pageTitle.textContent = titulo;
+}
+
+/* ===== EVENTOS DO MENU ===== */
+btnDashboard.onclick = () => carregarPagina(paginaDashboard, "Dashboard");
+btnRegistrar.onclick = () => carregarPagina(paginaRegistrar, "Registrar");
+btnDetalhes.onclick  = () => carregarPagina(paginaDetalhes, "Detalhes");
+
+// Carregar dashboard ao iniciar
+// Isso substitui o conteúdo inicial do <main> no index.html
+carregarPagina(paginaDashboard, "Dashboard");

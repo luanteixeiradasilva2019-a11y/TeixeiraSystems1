@@ -1,0 +1,64 @@
+/* ======== ESTILOS GERAIS ======== */
+body {
+    font-family: Arial, sans-serif;
+    background: #eef1f6;
+    padding: 20px;
+}
+
+header {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ddd;
+    gap: 12px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+nav button {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #999;
+    background: #fff;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+nav button:hover {
+    background: #dbeafe;
+}
+
+/* ======== CARDS DO DASHBOARD ======== */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+/* ======== LISTA DE INCIDENTES ======== */
+.list-item {
+    background: #fff;
+    border-left: 6px solid #3b82f6;
+    padding: 14px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
